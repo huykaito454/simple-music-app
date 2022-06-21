@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import { Fragment, lazy, Suspense } from "react";
+import "swiper/scss";
+import { Routes, Route } from "react-router-dom";
+import Main from "./components/layout/Main";
+import { AudioProvider } from "./contexts/audioContext";
 
+const HomePage = lazy(() => import("./pages/HomePage"));
+const SearchPage = lazy(() => import("./pages/SearchPage"));
+const AlbumPage = lazy(() => import("./pages/AlbumPage"));
+const ArtistPage = lazy(() => import("./pages/ArtistPage"));
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Suspense fallback={<></>}>
+        <AudioProvider>
+          <Routes>
+            <Route element={<Main></Main>}>
+              <Route path="/" element={<HomePage></HomePage>}></Route>
+              <Route path="/search" element={<SearchPage></SearchPage>}></Route>
+              <Route
+                path="/albums/:albumId"
+                element={<AlbumPage></AlbumPage>}
+              ></Route>
+              <Route
+                path="/artist/:artistId"
+                element={<ArtistPage></ArtistPage>}
+              ></Route>
+            </Route>
+          </Routes>
+        </AudioProvider>
+      </Suspense>
+    </Fragment>
   );
 }
 
