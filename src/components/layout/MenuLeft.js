@@ -38,7 +38,7 @@ const MenuLeft = () => {
           to={"/"}
           className={({ isActive }) =>
             isActive
-              ? "text-white flex items-center py-2 cursor-pointer w-full"
+              ? " flex items-center py-2 cursor-pointer w-full"
               : "flex items-center py-2 cursor-pointer w-full hover:text-white"
           }
         >
@@ -51,7 +51,7 @@ const MenuLeft = () => {
           to={"/"}
           className={({ isActive }) =>
             isActive
-              ? "text-white flex items-center py-2 cursor-pointer w-full"
+              ? " flex items-center py-2 cursor-pointer w-full"
               : "flex items-center py-2 cursor-pointer w-full hover:text-white "
           }
         >
@@ -62,7 +62,7 @@ const MenuLeft = () => {
           to={"/"}
           className={({ isActive }) =>
             isActive
-              ? "text-white flex items-center py-2 cursor-pointer w-full"
+              ? "flex items-center py-2 cursor-pointer w-full"
               : "flex items-center py-2 cursor-pointer w-full hover:text-white "
           }
         >

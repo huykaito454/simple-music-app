@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <>
       <div className="gradient h-[112px] w-full"></div>
-      <div className="page-container">
+      <div className="page-container pb-20">
         <MusicList title={"Top Albums"} type={"top"}></MusicList>
         <MusicList title={"New Releases"} type={"new"}></MusicList>
       </div>

@@ -14,6 +14,11 @@ const MusicCard = ({ item }) => {
           src={`https://api.napster.com/imageserver/v2/albums/${item.id}/images/300x300.jpg`}
           alt=""
           className="w-full h-full object-cover rounded-sm"
+          onError={(e) => {
+            e.target.src =
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/400px-Spotify_App_Logo.svg.png";
+            e.onError = null;
+          }}
         />
         <i className="fas fa-play absolute bottom-2 right-2 text-4xl text-[#1ed760] opacity-0 group-hover:opacity-100 play-transitions"></i>
       </div>
