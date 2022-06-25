@@ -1,6 +1,6 @@
 export const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const key = "YjQ0YmM1MmMtZTJiOC00ODM5LThkZTctZjhhNzI0MWEyNzU5";
-const endPoint = "http://api.napster.com/v2.2";
+const endPoint = "https://api.napster.com/v2.2";
 export const API = {
   getAlbum: (type) => `${endPoint}/albums/${type}?apikey=${key}`,
   getSearch: (query) => `${endPoint}/search?apikey=${key}&query=${query}`,
